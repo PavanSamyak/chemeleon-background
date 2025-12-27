@@ -1,0 +1,497 @@
+@import "tailwindcss";
+
+@layer base {
+	* {
+		@apply border-separator outline-separator/50;
+	}
+
+	body {
+		@apply bg-background text-label;
+	}
+
+	.box,
+	.box-body {
+		@apply mx-auto max-w-screen sm:max-w-screen md:max-w-[90%] lg:max-w-[70%] xl:max-w-[60%] 2xl:max-w-[40%];
+	}
+}
+
+.box-body {
+	min-height: calc(100vh - 7.3rem);
+}
+
+/* Text Styling */
+body {
+	font-size: clamp(1rem, 0.95rem + 0.25vw, 1.0625rem);
+	/* 16 → 17 */
+	line-height: 1.55;
+	letter-spacing: 0;
+	text-wrap: pretty;
+	text-rendering: optimizeLegibility;
+}
+
+.title-lg,
+.title,
+.title-2 {
+	font-family:
+		"Helvetica Now Var Display",
+		"SF Pro Display",
+		-apple-system,
+		"Inter",
+		system-ui,
+		sans-serif;
+}
+
+body,
+.headline,
+.subheadline,
+.body,
+.callout {
+	font-family:
+		"Helvetica Now Var Text",
+		"SF Pro Text",
+		-apple-system,
+		system-ui,
+		"Inter",
+		sans-serif;
+}
+
+.footnote,
+.caption,
+.caption-2 {
+	font-family:
+		"Helvetica Now Var Micro",
+		"SF Pro Text",
+		-apple-system,
+		system-ui,
+		"Inter",
+		sans-serif;
+}
+
+/* ------------------------------
+   DISPLAY / TITLES (balance)
+-------------------------------- */
+
+.title-lg {
+	font-size: clamp(2.25rem, 1.8rem + 2vw, 3.5rem);
+	/* 36 → 56 */
+	line-height: 1.08;
+	letter-spacing: -0.02em;
+	font-weight: 700;
+	text-wrap: balance;
+}
+
+.title {
+	font-size: clamp(1.875rem, 1.5rem + 1.6vw, 3rem);
+	/* 30 → 48 */
+	line-height: 1.1;
+	letter-spacing: -0.02em;
+	font-weight: 600;
+	text-wrap: balance;
+}
+
+.title-2 {
+	font-size: clamp(1.5rem, 1.25rem + 1.2vw, 2.25rem);
+	/* 24 → 36 */
+	line-height: 1.15;
+	letter-spacing: -0.015em;
+	font-weight: 600;
+	text-wrap: balance;
+}
+
+/* ------------------------------
+   HEADINGS
+-------------------------------- */
+
+.headline {
+	font-size: clamp(1.125rem, 1rem + 0.5vw, 1.375rem);
+	/* 18 → 22 */
+	line-height: 1.3;
+	letter-spacing: -0.01em;
+	font-weight: 600;
+	text-wrap: balance;
+}
+
+.subheadline {
+	font-size: clamp(1rem, 0.95rem + 0.3vw, 1.125rem);
+	/* 16 → 18 */
+	line-height: 1.35;
+	letter-spacing: -0.005em;
+	font-weight: 500;
+	text-wrap: pretty;
+}
+
+/* ------------------------------
+   BODY TEXT (pretty)
+-------------------------------- */
+
+.callout {
+	font-size: clamp(0.9375rem, 0.9rem + 0.25vw, 1rem);
+	/* 15 → 16 */
+	line-height: 1.5;
+	letter-spacing: 0;
+	font-weight: 500;
+	text-wrap: pretty;
+}
+
+/* ------------------------------
+   SMALL TEXT
+-------------------------------- */
+
+.footnote {
+	font-size: clamp(0.8125rem, 0.8rem + 0.2vw, 0.875rem);
+	/* 13 → 14 */
+	line-height: 1.45;
+	letter-spacing: 0.01em;
+	font-weight: 400;
+	text-wrap: pretty;
+}
+
+.caption {
+	font-size: clamp(0.75rem, 0.75rem + 0.15vw, 0.8125rem);
+	/* 12 → 13 */
+	line-height: 1.4;
+	letter-spacing: 0.015em;
+	font-weight: 400;
+	text-wrap: pretty;
+}
+
+.caption-2 {
+	font-size: clamp(0.6875rem, 0.7rem + 0.1vw, 0.75rem);
+	/* 11 → 12 */
+	line-height: 1.35;
+	letter-spacing: 0.02em;
+	font-weight: 400;
+	text-wrap: pretty;
+}
+
+/* ------------------------------
+   Emphasis (weight modulation)
+-------------------------------- */
+
+/* Neutral baseline helper (optional) */
+.em-0 {
+	font-weight: inherit;
+}
+
+/* Positive emphasis */
+.em {
+	font-weight: 600;
+}
+
+.em-lg {
+	font-weight: 800;
+}
+
+.em-xl {
+	font-weight: 900;
+}
+
+/* Negative emphasis */
+.-em {
+	font-weight: 400;
+}
+
+.-em-lg {
+	font-weight: 300;
+}
+
+.-em-xl {
+	font-weight: 200;
+}
+
+/* ------------------------------
+   Underline utilities
+-------------------------------- */
+
+.u {
+	text-decoration-line: underline;
+	text-decoration-thickness: 0.08em;
+	text-underline-offset: 0.15em;
+}
+
+.u-d {
+	text-decoration-line: underline;
+	text-decoration-style: dotted;
+	text-decoration-thickness: 0.08em;
+}
+
+.u-da {
+	text-decoration-line: underline;
+	text-decoration-style: dashed;
+	text-decoration-thickness: 0.08em;
+}
+
+.u-do {
+	text-decoration-line: underline;
+	text-decoration-style: double;
+	text-decoration-thickness: 0.12em;
+}
+
+/* ------------------------------
+   Italic
+-------------------------------- */
+
+.i {
+	font-style: italic;
+}
+
+/* ------------------------------
+   Strikethrough
+-------------------------------- */
+
+.st {
+	text-decoration-line: line-through;
+	text-decoration-thickness: 0.08em;
+}
+
+/* ------------------------------
+   All Small Caps
+-------------------------------- */
+
+.sc {
+	font-variant-caps: all-small-caps;
+	letter-spacing: 0.08em;
+}
+
+.uc {
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+}
+
+.lc {
+	text-transform: lowercase;
+}
+
+/* ------------------------------
+   Letter Width (Condensed)
+   Works with wdth axis if present
+-------------------------------- */
+
+/* condensed */
+.-lw {
+	font-stretch: 80%;
+	letter-spacing: -0.005em;
+}
+
+/* Colors */
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+	--color-bg: oklch(98.8% 0 260);
+	--color-bg-2: oklch(96.8% 0 260);
+	--color-bg-3: oklch(94.6% 0 260);
+	--color-bg-inverse: oklch(2% 0 260);
+
+	--color-bgg: oklch(97.6% 0 260);
+	--color-bgg-2: oklch(95.4% 0 260);
+	--color-bgg-3: oklch(92.8% 0 260);
+
+	--color-fi: oklch(72% 0.002 260 / 0.4);
+	--color-fi-2: oklch(68% 0.002 260 / 0.4);
+	--color-fi-3: oklch(60% 0.002 260 / 0.4);
+	--color-fi-4: oklch(52% 0.002 260 / 0.4);
+
+	--color-lb: oklch(21% 0 260);
+	--color-lb-2: oklch(38% 0 260);
+	--color-lb-3: oklch(55% 0 260);
+	--color-lb-4: oklch(70% 0 260);
+
+	--color-lb-inverse: oklch(96% 0 260);
+	--color-lb-inverse-2: oklch(82% 0 260);
+	--color-lb-inverse-3: oklch(66% 0 260);
+	--color-lb-inverse-4: oklch(50% 0 260);
+
+	--color-so: oklch(78% 0 260);
+	--color-vso: oklch(22% 0 260);
+	--color-sno: oklch(78% 0 260 / 0.36);
+	--color-vsno: oklch(22% 0 260 / 0.36);
+
+	--color-vfil: oklch(45% 0.002 260 / 0.22);
+	--color-vfil-2: oklch(45% 0.002 260 / 0.16);
+	--color-vfil-3: oklch(45% 0.002 260 / 0.12);
+	--color-vfil-4: oklch(45% 0.002 260 / 0.08);
+
+	--color-vfid: oklch(60% 0 260);
+	--color-vfid-2: oklch(54% 0 260);
+	--color-vfid-3: oklch(48% 0 260);
+	--color-vfid-4: oklch(42% 0 260);
+
+	--color-vlbl: oklch(24% 0 260);
+	--color-vlbl-2: oklch(38% 0 260);
+	--color-vlbl-3: oklch(50% 0 260);
+	--color-vlbl-4: oklch(62% 0 260);
+
+	--color-vlbd: oklch(94% 0 260);
+	--color-vlbd-2: oklch(82% 0 260);
+	--color-vlbd-3: oklch(68% 0 260);
+	--color-vlbd-4: oklch(54% 0 260);
+
+	--color-red: oklch(62% 0.22 27);
+	--color-orange: oklch(70% 0.2 52);
+	--color-yellow: oklch(82% 0.18 95);
+	--color-lime: oklch(78% 0.2 120);
+	--color-green: oklch(65% 0.2 145);
+	--color-forest: oklch(56% 0.18 155);
+	--color-mint: oklch(72% 0.14 170);
+	--color-teal: oklch(68% 0.15 190);
+	--color-cyan: oklch(70% 0.14 210);
+	--color-sky: oklch(76% 0.12 230);
+	--color-blue: oklch(60% 0.2 255);
+	--color-indigo: oklch(54% 0.22 270);
+	--color-purple: oklch(56% 0.22 285);
+	--color-violet: oklch(62% 0.18 300);
+	--color-magenta: oklch(58% 0.22 320);
+	--color-pink: oklch(66% 0.2 345);
+	--color-crimson: oklch(54% 0.24 15);
+	--color-brown: oklch(54% 0.09 65);
+	--color-slate: oklch(50% 0.04 250);
+	--color-gray: oklch(62% 0.02 260);
+}
+
+.dark {
+	--color-bg: oklch(11% 0 260);
+	--color-bg-2: oklch(14% 0 260);
+	--color-bg-3: oklch(18% 0 260);
+	--color-bg-inverse: oklch(98% 0 260);
+
+	--color-bgg: oklch(15% 0 260);
+	--color-bgg-2: oklch(20% 0 260);
+	--color-bgg-3: oklch(25% 0 260);
+
+	--color-fi: oklch(28% 0 260 / 0.6);
+	--color-fi-2: oklch(34% 0 260 / 0.6);
+	--color-fi-3: oklch(40% 0 260 / 0.6);
+	--color-fi-4: oklch(46% 0 260 / 0.6);
+
+	--color-lb: oklch(96% 0 260);
+	--color-lb-2: oklch(82% 0 260);
+	--color-lb-3: oklch(66% 0 260);
+	--color-lb-4: oklch(50% 0 260);
+
+	--color-lb-inverse: oklch(21% 0 260);
+	--color-lb-inverse-2: oklch(38% 0 260);
+	--color-lb-inverse-3: oklch(55% 0 260);
+	--color-lb-inverse-4: oklch(70% 0 260);
+
+	--color-so: oklch(36% 0 260);
+	--color-vso: oklch(64% 0 260);
+	--color-sno: oklch(36% 0 260 / 0.4);
+	--color-vsno: oklch(64% 0 260 / 0.4);
+
+	--color-vfil: oklch(85% 0.002 260 / 0.22);
+	--color-vfil-2: oklch(85% 0.002 260 / 0.16);
+	--color-vfil-3: oklch(85% 0.002 260 / 0.12);
+	--color-vfil-4: oklch(85% 0.002 260 / 0.08);
+
+	--color-vfid: oklch(96% 0.002 260 / 0.26);
+	--color-vfid-2: oklch(96% 0.002 260 / 0.18);
+	--color-vfid-3: oklch(96% 0.002 260 / 0.12);
+	--color-vfid-4: oklch(96% 0.002 260 / 0.08);
+
+	--color-vlbl: oklch(86% 0 260);
+	--color-vlbl-2: oklch(72% 0 260);
+	--color-vlbl-3: oklch(58% 0 260);
+	--color-vlbl-4: oklch(44% 0 260);
+
+	--color-vlbd: oklch(2% 0 260);
+	--color-vlbd-2: oklch(24% 0 260);
+	--color-vlbd-3: oklch(30% 0 260);
+	--color-vlbd-4: oklch(45% 0 260);
+
+	--color-red: oklch(70% 0.22 27);
+	--color-orange: oklch(78% 0.2 52);
+	--color-yellow: oklch(88% 0.18 95);
+	--color-lime: oklch(86% 0.2 120);
+	--color-green: oklch(72% 0.2 145);
+	--color-forest: oklch(62% 0.18 155);
+	--color-mint: oklch(78% 0.14 170);
+	--color-teal: oklch(74% 0.15 190);
+	--color-cyan: oklch(76% 0.14 210);
+	--color-sky: oklch(82% 0.12 230);
+	--color-blue: oklch(72% 0.2 255);
+	--color-indigo: oklch(66% 0.22 270);
+	--color-purple: oklch(70% 0.22 285);
+	--color-violet: oklch(76% 0.18 300);
+	--color-magenta: oklch(72% 0.22 320);
+	--color-pink: oklch(74% 0.2 345);
+	--color-crimson: oklch(62% 0.24 15);
+	--color-brown: oklch(64% 0.09 65);
+	--color-slate: oklch(58% 0.04 250);
+	--color-gray: oklch(70% 0.02 260);
+}
+
+@theme inline {
+	--color-background: var(--color-bg);
+	--color-background-inverse: var(--color-bg-inverse);
+	--color-background-2: var(--color-bg-2);
+	--color-background-3: var(--color-bg-3);
+
+	--color-grouped: var(--color-bgg);
+	--color-grouped-2: var(--color-bgg-2);
+	--color-grouped-3: var(--color-bgg-3);
+
+	--color-fill: var(--color-fi);
+	--color-fill-2: var(--color-fi-2);
+	--color-fill-3: var(--color-fi-3);
+	--color-fill-4: var(--color-fi-4);
+
+	--color-label: var(--color-lb);
+	--color-label-2: var(--color-lb-2);
+	--color-label-3: var(--color-lb-3);
+	--color-label-4: var(--color-lb-4);
+
+	--color-label-inverse: var(--color-lb-inverse);
+	--color-label-inverse-2: var(--color-lb-inverse-2);
+	--color-label-inverse-3: var(--color-lb-inverse-3);
+	--color-label-inverse-4: var(--color-lb-inverse-4);
+
+	--color-separator: var(--color-so);
+	--color-vibrant-separator: var(--color-vso);
+	--color-separator-nonopaque: var(--color-sno);
+	--color-vibrant-separator-nonopaque: var(--color-vsno);
+
+	--color-vibrant-fill: var(--color-vfil);
+	--color-vibrant-fill-2: var(--color-vfil-2);
+	--color-vibrant-fill-3: var(--color-vfil-3);
+	--color-vibrant-fill-4: var(--color-vfil-4);
+	--color-vibrant-fill-dark: var(--color-vfid);
+	--color-vibrant-fill-dark-2: var(--color-vfid-2);
+	--color-vibrant-fill-dark-3: var(--color-vfid-3);
+	--color-vibrant-fill-dark-4: var(--color-vfid-4);
+
+	--color-vibrant-label: var(--color-vlbl);
+	--color-vibrant-label-2: var(--color-vlbl-2);
+	--color-vibrant-label-3: var(--color-vlbl-3);
+	--color-vibrant-label-4: var(--color-vlbl-4);
+	--color-vibrant-label-inverse: var(--color-vlbd);
+	--color-vibrant-label-inverse-2: var(--color-vlbd-2);
+	--color-vibrant-label-inverse-3: var(--color-vlbd-3);
+	--color-vibrant-label-inverse-4: var(--color-vlbd-4);
+
+	--color-red: var(--color-red);
+	--color-orange: var(--color-orange);
+	--color-yellow: var(--color-yellow);
+	--color-lime: var(--color-lime);
+	--color-green: var(--color-green);
+	--color-forest: var(--color-forest);
+	--color-mint: var(--color-mint);
+	--color-teal: var(--color-teal);
+	--color-cyan: var(--color-cyan);
+	--color-sky: var(--color-sky);
+	--color-blue: var(--color-blue);
+	--color-indigo: var(--color-indigo);
+	--color-purple: var(--color-purple);
+	--color-violet: var(--color-violet);
+	--color-magenta: var(--color-magenta);
+	--color-pink: var(--color-pink);
+	--color-crimson: var(--color-crimson);
+	--color-brown: var(--color-brown);
+	--color-slate: var(--color-slate);
+	--color-gray: var(--color-gray);
+}
+
+.bar {
+	scrollbar-color: none;
+	scrollbar-width: none;
+}
