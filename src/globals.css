@@ -399,6 +399,7 @@ body,
 	--color-vlbd-3: oklch(30% 0 260);
 	--color-vlbd-4: oklch(45% 0 260);
 
+
 	--color-red: oklch(70% 0.22 27);
 	--color-orange: oklch(78% 0.2 52);
 	--color-yellow: oklch(88% 0.18 95);
@@ -494,4 +495,8 @@ body,
 .bar {
 	scrollbar-color: none;
 	scrollbar-width: none;
+}
+
+.bgColor {
+	background-color: var(--color-blue);
 }
