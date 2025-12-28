@@ -1,6 +1,6 @@
 import { Button } from "react-aria-components";
 import "./index.css";
-import { useEffect, useState } from "react";
+import { useRef, useEffect, useState } from "react";
 
 // To-do change color of bg on click of button with persistant storage
 
@@ -31,6 +31,11 @@ export function App() {
 	const [color, setColor] = useState("background");
 	const [theme, setTheme] = useState(localStorage.getItem("theme") || "dark");
 	const [themeText, setThemeText] = useState(localStorage.getItem("themeText") || "Toggle to light mode");
+	const ref = useRef<HTMLDivElement>(null);
+
+	useEffect(() => {
+		ref.current?.focus();
+	}, []);
 
 	localStorage.setItem("theme", theme);
 	// localStorage.setItem("color", color);
@@ -44,6 +49,7 @@ export function App() {
 		setTheme(theme === "dark" ? "light" : "dark");
 		setThemeText(theme === "dark" ? "Toggle to light mode" : "Toggle to dark mode");
 		localStorage.setItem("themeText", themeText);
+		ref.current?.focus();
 	}
 
 	return (
@@ -89,7 +95,9 @@ export function App() {
    pointer-events-none backdrop-blur-3xl container overflow-x-scroll bar mx-auto  rounded-full py-4 px-6 h-23"
 					></div>
 				</div>
-				<div className="mt-[40vh] flex gap-4 shadow-[0_2.8px_2.2px_rgba(0,_0,_0,_0.034),_0_6.7px_5.3px_rgba(0,_0,_0,_0.048),_0_12.5px_10px_rgba(0,_0,_0,_0.06),_0_22.3px_17.9px_rgba(0,_0,_0,_0.072),_0_41.8px_33.4px_rgba(0,_0,_0,_0.086),_0_100px_80px_rgba(0,_0,_0,_0.12)] container overflow-x-scroll bar mx-auto border border-separator  bg-grouped-3 rounded-full py-4 px-6">
+				<div
+					ref={ref}
+					className="scroll-smooth focus-visible:outline-none focus:outline-none mt-[40vh] flex gap-4 shadow-[0_2.8px_2.2px_rgba(0,_0,_0,_0.034),_0_6.7px_5.3px_rgba(0,_0,_0,_0.048),_0_12.5px_10px_rgba(0,_0,_0,_0.06),_0_22.3px_17.9px_rgba(0,_0,_0,_0.072),_0_41.8px_33.4px_rgba(0,_0,_0,_0.086),_0_100px_80px_rgba(0,_0,_0,_0.12)] container overflow-x-auto bar mx-auto border border-separator  bg-grouped-3 rounded-full py-4 px-6">
 					{colors.map((c) => (
 						<Button
 							key={c.id}
